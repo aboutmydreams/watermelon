@@ -19,7 +19,8 @@ class GameInit {
     gameRef.viewport = Viewport(size, scale);
     final boundaries = createBoundaries(gameRef.viewport);
     boundaries.forEach(gameRef.add);
-    //初始化碰撞检测器
+
+    // 初始化碰撞检测器
     gameRef.addContactCallback(BallWallContactCallback());
     gameRef.addContactCallback(BallBallContactCallback());
   }

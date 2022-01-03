@@ -56,7 +56,7 @@ class Levels {
     return kLevels[level - 1].image;
   }
 
-  ///等级表（level，radius）
+  /// 等级表（level，radius）
   static final kLevels = <Level>[];
 
   static String background = 'bg.png';

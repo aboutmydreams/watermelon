@@ -42,9 +42,12 @@ class GameOnload {
     GameState.scoreComponent =
         Scores.create(gameRef.viewport, text: GameState.score.toString());
     await gameRef.add(GameState.scoreComponent);
+
     final settingButton = SettingButton.create(gameRef.viewport);
     await gameRef.add(settingButton);
+
     await GenerateBall(gameRef).generateBall();
+
     // 初始化 game controllers
     await gameRef.add(UpdateBallsFalling());
     await gameRef.add(UpdateBallsBounce());

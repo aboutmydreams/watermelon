@@ -16,19 +16,19 @@ class GameLife {
     await NavigatorTool.push(GamePage());
   }
 
-  ///暂停
+  /// 暂停
   void pause() {
     gameRef.pauseEngine();
     GameState.gameStatus = GameStatus.pause;
   }
 
-  ///继续
+  /// 继续
   void resume() {
     gameRef.resumeEngine();
     GameState.gameStatus = GameStatus.start;
   }
 
-  ///win
+  /// win
   void win() {
     AudioTool.win();
     GameState.gameStatus = GameStatus.win;
@@ -38,7 +38,7 @@ class GameLife {
     ));
   }
 
-  ///game over
+  /// game over
   void dead() {
     AudioTool.dead();
     GameState.gameStatus = GameStatus.over;
@@ -48,18 +48,18 @@ class GameLife {
     ));
   }
 
-  ///重新开始
+  /// 重新开始
   void restart() {
     pause();
     NavigatorTool.replace(GamePage());
   }
 
-  ///回主页
+  /// 回主页
   void back2Home() {
     NavigatorTool.pop();
   }
 
-  ///打开设置页面
+  /// 打开设置页面
   void setting() async {
     pause();
     await NavigatorTool.push(GameSettingPage(

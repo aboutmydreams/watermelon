@@ -11,7 +11,7 @@ class GameInit {
   MyGame gameRef;
   GameInit(this.gameRef);
 
-  ///初始化
+  /// 初始化
   void init(Vector2 size) {
     final scale = 10.0;
     final gravity = Vector2(0, -1) * size.gravitySize;

@@ -5,7 +5,6 @@ import 'package:flutter/material.dart' hide Viewport;
 
 import '../game/game_life.dart';
 import '../tools/image/image_tool.dart';
-import '../tools/size_tool.dart';
 
 class SettingButton extends SpriteComponent with Tapable, HasGameRef {
   static double margin = 5;
@@ -23,11 +22,8 @@ class SettingButton extends SpriteComponent with Tapable, HasGameRef {
     final sprite = Sprite(ImageTool.image('setting.png'));
     return SettingButton(
         sprite: sprite,
-        size: Vector2(
-          viewport.vw(10),
-          viewport.vw(10),
-        ),
-        position: Vector2(viewport.vw(100 - margin - 10), viewport.vw(margin)));
+        size: Vector2(20, 20),
+        position: Vector2(100 - margin - 20, margin));
   }
 
   SettingButton({Sprite sprite, Vector2 size, this.position})

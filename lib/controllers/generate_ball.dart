@@ -14,7 +14,7 @@ class GenerateBall {
       .where((e) => e is Ball && e.moving && !e.landed)
       .isEmpty;
 
-  ///生成新球
+  /// 生成新球
   Future<void> generateBall([double x = 0]) async {
     if (gameRef.hide) return;
     if (!canGenerateBall) return;

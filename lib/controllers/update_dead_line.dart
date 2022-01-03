@@ -12,19 +12,21 @@ class UpdateDeadLine extends Component with HasGameRef<MyGame> {
   void update(double t) {
     if (gameRef.hide) return;
     if (GameState.gameStatus != GameStatus.start) return;
-    final almostDeads = gameRef.components.where((e) =>
-        e is Ball &&
-        e.landed &&
-        e.position.y < gameRef.viewport.vw(DeadLine.showTop));
+
+    final almostDeads = gameRef.components.where((e) {
+      if (e is Ball) {
+        print(e.position.y);
+        print(DeadLine.showTop);
+      }
+      return e is Ball && e.landed && e.position.y < DeadLine.showTop;
+    });
     if (almostDeads.isNotEmpty) {
       DeadLine.show = true;
     } else {
       DeadLine.show = false;
     }
-    if (gameRef.components.any((e) =>
-        e is Ball &&
-        e.landed &&
-        e.position.y < gameRef.viewport.vw(DeadLine.marginTop))) {
+    if (gameRef.components.any(
+        (e) => e is Ball && e.landed && e.position.y < DeadLine.marginTop)) {
       GameLife(gameRef).dead();
     }
   }

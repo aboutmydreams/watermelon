@@ -17,43 +17,41 @@ class AboutPage extends StatelessWidget {
     return ScreenConfig(
       builder: () => Scaffold(
         backgroundColor: Colors.grey[100],
-        body: SafeArea(
+        appBar: AppBar(title: Text('About')),
+        body: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
           child: Center(
             child: Column(
               children: [
-                _topAction(),
-                lExpanded(),
-                lExpanded(flex: 10),
+                Text('data'),
                 lText(
                   'A',
                   bold: true,
                   size: 18,
                   color: Colors.grey[600],
                 ),
-                lExpanded(),
                 lText(
                   'Work',
                   bold: true,
                   size: 36,
                   color: Colors.black,
                 ),
-                lExpanded(),
                 lText(
                   'by',
                   bold: true,
                   size: 18,
                   color: Colors.grey[600],
                 ),
-                lExpanded(),
                 Image.asset(
                   'assets/images/qr.jpg',
                   width: 30.vw,
                 ),
-                lExpanded(flex: 10, child: _homeSite()),
+                SizedBox(height: 300),
+                _topAction(),
+
+                // lExpanded(flex: 10, child: _homeSite()),
                 _madeWithLove(),
-                lExpanded(),
                 _bottomAction(),
-                lExpanded(),
               ],
             ),
           ),

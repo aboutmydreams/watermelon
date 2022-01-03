@@ -10,7 +10,7 @@ class BallWallContactCallback extends ContactCallback<Ball, Wall> {
   @override
   void begin(Ball ball, Wall wall, Contact contact) {
     if (GameState.gameStatus != GameStatus.start) return;
-    if (wall.side != 3) return; //非底边
+    if (wall.side != 3) return; // 非底边
     if (!ball.landed) {
       AudioTool.fall();
     }

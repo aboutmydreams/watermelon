@@ -6,13 +6,13 @@ import '../tools/image/image_tool.dart';
 import '../tools/size_tool.dart';
 
 class DeadLine extends SpriteComponent {
-  ///deadline距屏幕顶部距离，单位：vw
-  static double marginTop = 36;
+  /// deadline距屏幕顶部距离，单位：vw
+  static double marginTop = 64;
 
-  ///触发deadline显示，ball距屏幕顶部距离，单位：vw
+  /// 触发deadline显示，ball距屏幕顶部距离，单位：vw
   static double showTop = marginTop + 44;
 
-  ///是否显示
+  /// 是否显示
   static bool show = false;
 
   @override
@@ -20,13 +20,14 @@ class DeadLine extends SpriteComponent {
 
   static DeadLine create(Viewport viewport) {
     final sprite = Sprite(ImageTool.image('dead_line.png'));
+    print(viewport.size);
     return DeadLine(
         sprite: sprite,
         size: Vector2(
           viewport.size.x,
           viewport.vw(1),
         ),
-        position: Vector2(0, viewport.vw(marginTop)));
+        position: Vector2(0, marginTop));
   }
 
   DeadLine({Sprite sprite, Vector2 size, this.position})

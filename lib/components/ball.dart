@@ -7,31 +7,31 @@ import 'package:forge2d/forge2d.dart';
 import '../game/level/levels.dart';
 
 class Ball extends SpriteBodyComponent {
-  ///下落位置
+  /// 下落位置
   Vector2 fallPosition;
 
-  ///是否下落
+  /// 是否下落
   bool isFalling;
 
-  ///等级
+  /// 等级
   int level;
 
-  ///半径
+  /// 半径
   double _radius;
 
-  ///是否落地
+  /// 是否落地
   bool landed = false;
 
-  ///level up
+  /// level up
   bool levelUp = false;
 
-  ///是否remove
+  /// 是否 remove
   bool removed = false;
 
-  ///是否开始移动
+  /// 是否开始移动
   bool moving = true;
 
-  ///是否弹动
+  /// 是否弹动
   bool bouncing = false;
 
   Vector2 get position =>
@@ -85,7 +85,7 @@ class Ball extends SpriteBodyComponent {
     _radius = radius;
   }
 
-  ///物理实体
+  /// 物理实体
   @override
   Body createBody() {
     final shape = CircleShape()..radius = size.x / 2;
@@ -97,13 +97,13 @@ class Ball extends SpriteBodyComponent {
 
     final fixtureDef = FixtureDef()
       ..shape = shape
-      ..restitution = 0.1 //弹性
-      ..density = 0.1 //密度
-      ..friction = 0.1; //摩擦力
+      ..restitution = 0.1 // 弹性
+      ..density = 0.1 // 密度
+      ..friction = 0.1; // 摩擦力
 
     final bodyDef = BodyDef()
-      ..userData = this //开启检测碰撞
-      ..angularDamping = 0.1 //角速度阻尼
+      ..userData = this // 开启检测碰撞
+      ..angularDamping = 0.1 // 角速度阻尼
       ..position = worldPosition
       ..type = isFalling ? BodyType.DYNAMIC : BodyType.KINEMATIC;
 

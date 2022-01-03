@@ -32,12 +32,31 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenConfig(
       builder: () => Scaffold(
-        backgroundColor: Colors.grey[100],
+        backgroundColor: Colors.yellow,
         body: SafeArea(
           child: Center(
             child: Column(
               children: [
-                _topAction(),
+                Container(
+                  padding: EdgeInsets.all(5.vw),
+                  child: Row(
+                    children: [
+                      lIconButton(
+                        Icons.info,
+                        size: 10.vw,
+                        color: Colors.black,
+                        onTap: _about,
+                      ),
+                      lExpanded(),
+                      lIconButton(
+                        Icons.settings,
+                        size: 10.vw,
+                        color: Colors.black,
+                        onTap: _setting,
+                      ),
+                    ],
+                  ),
+                ),
                 lExpanded(
                   child: _bottomAction(),
                 ),
@@ -50,7 +69,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  ///预加载
+  /// 预加载
   Widget _hideGame() => Offstage(
         child: Container(
           width: 1,
@@ -59,32 +78,11 @@ class HomePage extends StatelessWidget {
         ),
       );
 
-  Widget _topAction() => Container(
-        padding: EdgeInsets.all(5.vw),
-        child: Row(
-          children: [
-            lIconButton(
-              Icons.info,
-              size: 10.vw,
-              color: Colors.black,
-              onTap: _about,
-            ),
-            lExpanded(),
-            lIconButton(
-              Icons.settings,
-              size: 10.vw,
-              color: Colors.black,
-              onTap: _setting,
-            ),
-          ],
-        ),
-      );
-
   Widget _bottomAction() => Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           lButton(
-            '开始游戏',
+            'Get Start',
             onTap: _start,
             height: 5.vw * 2.2,
             colorBg: Colors.black,

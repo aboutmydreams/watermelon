@@ -32,7 +32,7 @@ class _GamePageState extends State<GamePage> {
     return GestureDetector(
       onHorizontalDragEnd: (_) {
         if (kIsWeb) {
-          //侧滑返回手势
+          // 侧滑返回手势
           NavigatorTool.pop();
         }
       },

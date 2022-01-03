@@ -32,10 +32,11 @@ class NavigatorTool extends NavigatorObserver {
       ),
     );
     return FadeTransition(
-        opacity: value,
-        child: ScaleTransition(
-          scale: value,
-          child: child,
-        ));
+      opacity: value,
+      child: ScaleTransition(
+        scale: value,
+        child: child,
+      ),
+    );
   }
 }

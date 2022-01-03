@@ -4,13 +4,13 @@ import '../game/game_setting.dart';
 import '../tools/hive_tool.dart';
 
 class GameState {
-  ///成绩
+  /// 成绩
   static int score = 0;
 
-  ///最高纪录
+  /// 最高纪录
   static int record = 0;
 
-  ///是否是新纪录
+  /// 是否是新纪录
   static bool isNewRecord = false;
 
   ///游戏状态
@@ -61,17 +61,17 @@ class GameState {
   }
 }
 
-///游戏状态
+/// 游戏状态
 enum GameStatus {
-  ///挂了
+  /// 挂了
   over,
 
-  ///赢了
+  /// 赢了
   win,
 
-  ///暂停
+  /// 暂停
   pause,
 
-  ///开始
+  /// 开始
   start,
 }
